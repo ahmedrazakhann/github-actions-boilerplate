@@ -6,6 +6,8 @@ on:
   pull_request:
     branches: ["main", "develop"]
   workflow_dispatch:
+  repository_dispatch:
+    types: [strapi-publish]
 
 jobs:
   build:
