@@ -7,7 +7,7 @@ on:
     branches: ["main", "develop"]
   workflow_dispatch:
   repository_dispatch:
-    types: [strapi-publish]
+    types: [strapi-test]
 
 jobs:
   build:
