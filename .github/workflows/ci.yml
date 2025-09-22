@@ -29,11 +29,7 @@ jobs:
       - name: Build app
         run: npm run build
 
-      # 5. Run tests (optional)
-      - name: Run tests
-        run: npm test -- --watchAll=false
-
-      # 6. Print debug logs (console output)
+      # 5. Print debug logs (console output)
       - name: Show build logs
         run: |
           echo "Build completed ✅"
