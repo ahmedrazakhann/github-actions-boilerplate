@@ -33,4 +33,4 @@ jobs:
       - name: Show build logs
         run: |
           echo "Build completed ✅"
-          ls -lh build/
+          ls -lh dist/
