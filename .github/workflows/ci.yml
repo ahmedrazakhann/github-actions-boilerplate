@@ -1,0 +1,40 @@
+name: React App CI
+
+on:
+  push:
+    branches: ["main", "develop"]
+  pull_request:
+    branches: ["main", "develop"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      # 3. Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # 4. Run build
+      - name: Build app
+        run: npm run build
+
+      # 5. Run tests (optional)
+      - name: Run tests
+        run: npm test -- --watchAll=false
+
+      # 6. Print debug logs (console output)
+      - name: Show build logs
+        run: |
+          echo "Build completed ✅"
+          ls -lh build/
